@@ -82,7 +82,7 @@ async function all(req, res) {
 }
 async function delete1(req, res) {
   try {
-    Sch.findById(req.body.id, function (err, Record) {
+    Sch.findById(req.params.id, function (err, Record) {
       if (err) res.send(err);
 
       Record.status = 0;

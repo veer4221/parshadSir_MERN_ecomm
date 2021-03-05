@@ -19,8 +19,8 @@ const Home = (props) => {
     alert("user added ");
     loadUsers();
   };
-  const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3003/users/${id}`);
+  const deleteProd = async (id) => {
+    await axios.delete(`http://localhost:5000/api/product/delete/${id}`);
     loadUsers();
   };
   return (
@@ -60,14 +60,14 @@ const Home = (props) => {
                     AddToCart
                   </Link>
 
-                  {/* <Link
+                  <Link
                     className="btn btn-danger"
                     onClick={() => {
-                      deleteUser(user.id);
+                      deleteProd(user._id);
                     }}
                   >
                     delete
-                  </Link> */}
+                  </Link>
                 </td>
               </tr>
             ))}
