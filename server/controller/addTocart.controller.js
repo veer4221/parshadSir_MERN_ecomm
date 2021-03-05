@@ -22,6 +22,7 @@ async function add(req, res) {
       //   sch.USR_id = req.body.USR_id;
       sch.Prod_id = req.params.id;
       sch.quantity = 1;
+      sch.status = 1;
       // parseInt(req.body.quantity);
 
       // sch.password = await bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10), null);
@@ -42,6 +43,8 @@ async function add(req, res) {
         // Record.USR_id = req.body.USR_id;
         Record.Prod_id = req.params.id;
         Record.quantity = 1;
+        Record.status = 1;
+
         Record.Update_Date = Date.now();
 
         Record.save(function (err) {
@@ -61,7 +64,7 @@ async function add(req, res) {
 
 // View Record
 async function view(req, res) {
-  let ordObj = await Sch.find().populate({
+  let ordObj = await Sch.find({ status: 1 }).populate({
     path: "Prod_id",
     model: prod_Sch,
     select: "_id Prod_name Prod_praice ",
@@ -71,7 +74,7 @@ async function view(req, res) {
 
 async function delete1(req, res) {
   try {
-    Sch.findById(req.body.id, function (err, Record) {
+    Sch.findById(req.params.id, function (err, Record) {
       if (err) res.send(err);
 
       Record.status = 0;

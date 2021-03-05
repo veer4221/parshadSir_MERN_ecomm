@@ -4,6 +4,7 @@ var Controller = require("../controller/addTocart.controller");
 
 router.route("/cart/:id").post(Controller.add);
 router.route("/cartall").get(Controller.view);
+router.route("/cartdlt/:id").delete(Controller.delete1);
 
 // router.route("/login").post(Controller.login).get(Controller.getAll);
 //Export API routes

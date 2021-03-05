@@ -73,7 +73,7 @@ async function update(req, res) {
 async function all(req, res) {
   console.log("alll");
   try {
-    const data = await Sch.find({});
+    const data = await Sch.find({ status: 1 });
     console.log(data);
     res.status(200).json({ data: data });
   } catch (error) {

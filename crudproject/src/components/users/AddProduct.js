@@ -20,10 +20,10 @@ const AddProduct = (props) => {
   };
   return (
     <div>
-      <h1>add Product</h1>
+      {/* <h1>add Product</h1> */}
       <div className="container">
         <div className="w-75 mx-auto shadow p-5">
-          <h2 className="text-center mb-4">Add A User</h2>
+          <h2 className="text-center mb-4">Add Product</h2>
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="form-group">
               <input
@@ -39,7 +39,7 @@ const AddProduct = (props) => {
               <input
                 type="number"
                 className="form-control form-control-lg"
-                placeholder="Enter Your Username"
+                placeholder="Enter Price"
                 name="Prod_praice"
                 value={Prod_praice}
                 onChange={(e) => onInputChange(e)}

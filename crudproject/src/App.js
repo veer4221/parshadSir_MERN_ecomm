@@ -9,6 +9,7 @@ import NotFound from "./components/pages/NotFound";
 import AddProduct from "./components/users/AddProduct";
 import EditUser from "./components/users/EditUser";
 import User from "./components/users/User";
+import Cart from "./components/users/Cart";
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/users/add" component={AddProduct} />
           <Route exact path="/users/edit/:id" component={EditUser} />
+          <Route exact path="/cart" component={Cart} />
           <Route exact path="/users/:id" component={User} />
           <Route component={NotFound} />
         </Switch>

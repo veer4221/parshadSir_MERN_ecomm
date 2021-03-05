@@ -41,7 +41,7 @@ const Navbar = (props) => {
               </li>
             </ul>
           </div>
-          <Link className="btn btn-outline-light mx-2" to="/users/add">
+          <Link className="btn btn-outline-light mx-2" to="/cart">
             cart
           </Link>
           <Link className="btn btn-outline-light" to="/users/add">

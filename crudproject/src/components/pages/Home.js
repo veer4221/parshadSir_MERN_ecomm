@@ -14,6 +14,11 @@ const Home = (props) => {
     setUser(result.data.data.reverse());
     console.log(users._id);
   };
+  const addTocart = async (id) => {
+    await axios.post(`http://localhost:5000/api/addtocart/cart/${id}`);
+    alert("user added ");
+    loadUsers();
+  };
   const deleteUser = async (id) => {
     await axios.delete(`http://localhost:3003/users/${id}`);
     loadUsers();
@@ -21,7 +26,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <div className="py-4">
-        <h1>home page</h1>
+        <h1>Products</h1>
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -47,8 +52,10 @@ const Home = (props) => {
                     Views
                   </Link>
                   <Link
-                    className="btn btn-outline-primary mr-2"
-                    to={`/users/edit/${user._id}`}
+                    className="btn btn-outline-danger mr-2"
+                    onClick={() => {
+                      addTocart(user._id);
+                    }}
                   >
                     AddToCart
                   </Link>
